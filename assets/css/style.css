@@ -1,0 +1,24 @@
+:root {
+    --grisClaro: #eeeeee;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    display: grid;
+    min-height: 100dvh;
+    grid-template-rows:auto 1fr auto;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 1.6rem;
+    background-color: var(--grisClaro);
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100%);
+    margin: 0;
+    padding: 0;
+}

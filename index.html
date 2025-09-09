@@ -11,12 +11,18 @@
 <body>
     <header>
         <div class="header-bg contenedor">
-            <nav>
-                <a href="index.html">Natita Blog</a>
-                <a href="index.html">Home</a>
-                <a href="about.html">Sobre mí</a>
-                <a href="contact.html">Contacto</a>
-            </nav>
+            <div class="nav-grid">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/img/libro.png" alt="Logo del blog">
+                    </a>
+                </div>
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">Sobre mí</a>
+                    <a href="contact.html">Contacto</a>
+                </nav>
+            </div>
             <div class="titulo-blog">
                 <h1>Lecturas de Natalia</h1>
                 <p>Reseñas sobre libros que he leído</p>
@@ -25,16 +31,54 @@
                         <img src="assets/img/github.png" alt="GitHub">
                     </a>
                     <a href="https://www.linkedin.com/in/natalia-g%C3%BCemez-51860228b/" target="_blank">
-                        <img src="assets/img/facebook.png" alt="Facebook">
+                        <img src="assets/img/linkedin.png" alt="Linkedin">
                     </a>
-                    <a href="https://twitter.com/natiblog" target="_blank">
-                        <img src="assets/img/twitter.png" alt="Twitter">
+                    <a href="https://open.spotify.com/user/tjtro6qso9psmkuxky7amtu66?si=3bdbccdeef3a4664" target="_blank">
+                        <img src="assets/img/spotify.png" alt="Spotify">
                     </a>
                 </div>
             </div>
         </div>
     </header>
-    <main>Contenido</main>
+
+    <main class="contenedor-principal">
+        <div class="contenido">
+            <article>
+                <h2>La habitación al fondo de la casa</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+            </article>
+
+            <article>
+                <h2>Mi amor de Wattpad</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+            </article>
+        </div>
+        
+        <aside class="sidebar">
+            <h2>Acerca de mi</h2>
+            <img src="assets/img/foto-perfil.jpg" alt="Foto de Natalia" class="foto-perfil">
+            <p>Natalia Güemez</p>
+            <p>Instagram principal @natfpuffs</p>
+            <p>Instagram secundario @...</p>
+
+            <h2>Linkedin</h2>
+            <div class="badge-base LI-profile-badge" data-locale="es_ES" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="natalia-güemez-51860228b" data-version="v1">
+                <a class="badge-base__link LI-simple-link" href="https://mx.linkedin.com/in/natalia-g%C3%BCemez-51860228b?trk=profile-badge"></a>
+            </div>
+
+            <h2>Mi canción favorita</h2>
+            <div class="spotifywrapper">
+                <style>
+                    .spotifywrapper{position:relative}.spotifywrapper iframe{border:0;position:relative;z-index:2}.spotifywrapper a{color:rgba(0,0,0,0);position:absolute;left:0;top:0;z-index:0}
+                </style>
+                <a href="https://www.fluxaiimagegenerator.net">
+                    flux ai image generator
+                </a>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/7Lv6VzSqIz1sAssK2JUskG?utm_source=generator&theme=0" width="252" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </aside>
+    </main>
     <footer>Pie de página</footer>
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 </body>
 </html>

@@ -43,7 +43,7 @@ h3 { font-size: 2.4rem; }
 
     /* para tomar todo el ancho disponible */
     background-size: cover;
-    height: 45rem;
+    height: 40rem;
 
     /* el padre siempre debe tener posición relativa para que el hijo se pueda posicionar de forma absoluta */
     position: relative;
@@ -53,22 +53,26 @@ h3 { font-size: 2.4rem; }
     position: absolute;
     background-color: rgb(0 0 0 / 50%);
     width: 100%;
-    height: 100%;
+    min-height: 100%;   /* se adapta al contenido */
+    height: auto;       /* deja crecer el header */
     display: flex;
     flex-direction: column;
+    gap: 2rem;
+    align-items: center;
 }
 
 .nav-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 1rem;
     padding: 2.5rem;
+    width: 100%;
 }
 
 nav {
     display: flex;
-    justify-content: end;
-    gap: 5rem;
+    justify-content: flex-end;
+    gap: 6rem;   /* menos espacio entre enlaces */
+    white-space: nowrap; /* evita que los enlaces bajen de línea */
 }
 
 nav a {
@@ -78,8 +82,13 @@ nav a {
     text-transform: uppercase;
 }
 
-.contenido-header p { text-align: center; font-size: 3rem; margin: 0; color: var(--blanco);}
+.contenido-header p { text-align: center; font-size: 3rem; margin: 0; color: var(--blanco); }
 .contenido-header h1 { text-align: center; margin: 0; color: var(--blanco);}
+
+.descripcion-blog {
+    justify-content: center;
+    align-items: center;
+}
 
 /* Global: Redes sociales */
 .redes-sociales {
@@ -88,12 +97,8 @@ nav a {
     gap: 4rem;
 }
 
-.contenido-hero {
-    padding: 5rem;
-}
-
 /* Header: Redes sociales */
-.contenedor .redes-sociales {
+.descripcion-blog .redes-sociales {
     margin-top: 4rem;
 }
 
@@ -120,10 +125,9 @@ nav a {
     margin: 0;
     text-align: left;
 
-     /* ajustar texto */
+    /* ajustar texto */
     width: 100%;
     max-width: 100%;
-    overflow-wrap: break-word;   /* rompe palabras largas */
     word-break: break-word;      /* asegura que las palabras largas no desborden */
 }
 
@@ -132,8 +136,6 @@ nav a {
     color: rgb(51, 51, 51);
     margin: 0 0 2rem 0;
     margin-bottom: 20px;
-    width: 100%;
-    max-width: 100%;
 }
 
 .sidebar {
@@ -168,24 +170,44 @@ iframe, img {
         grid-template-columns: 1fr; /* se apilan */
     }
 
-    /* Header */
-.header-bg {
-    /* para imagenes de fondo */
-    background-image: url(../img/hero-bg.png);
-
-    /* para que la imagen no se repita */
-    background-repeat: no-repeat;
-
-    /* para tomar todo el ancho disponible */
-    background-size: cover;
-    height: 60rem;
-
-    /* el padre siempre debe tener posición relativa para que el hijo se pueda posicionar de forma absoluta */
-    position: relative;
+    nav {
+        gap: 6rem;
+        align-items: center;
+    }
 }
+
+@media (max-width: 480px) {
+    .header-bg {
+        height: 55rem;
+    }
+
+    .nav-grid {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 3rem;
+        padding-bottom: 0;
+    }
+
+    nav {
+        text-align: center;
+    }
+    nav a {
+        font-size: 1.6rem;
+    }
+
+    .descripcion-blog h1 {
+        font-size: 5.5rem;
+    }
+    .descripcion-blog p {
+        font-size: 3.5rem;
+    }
 }
 
 footer {
     margin: 0 auto;
-    padding: 2rem;
+    padding: 5rem;
+}
+
+footer p {
+    text-align: center;
 }

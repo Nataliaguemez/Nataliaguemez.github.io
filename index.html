@@ -51,31 +51,37 @@
     <main class="contenedor-principal">
         <div class="contenido">
             <article>
-                <h2>La habitación al fondo de la casa</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                <img src="assets/img/libro1.png" alt="La habitación al fondo de la casa">
+                <div class="contenido__descripcion">
+                    <h2>La habitación al fondo de la casa</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel tortor ex. Pellentesque ultrices orci urna, quis commodo velit condimentum id. Mauris hendrerit nibh accumsan, commodo augue in, tincidunt lacus. Praesent et fringilla urna. Aliquam at pretium sapien. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras lobortis, elit ac convallis porttitor, metus ligula porta ex, vel imperdiet ante urna in sapien. Duis erat augue, suscipit quis nulla sed, auctor commodo massa. Duis auctor nisl mauris, sit amet laoreet eros ullamcorper et. Nam eleifend convallis mauris eu sodales. Pellentesque sagittis erat vel mauris vulputate, sed ultrices tellus pretium. Curabitur dictum elementum laoreet. Sed eget venenatis urna. Nullam lacinia fermentum lacinia. Etiam a posuere nunc, nec fermentum quam. Sed ultricies risus ut enim consequat tempor.</p>
+                </div>
             </article>
 
             <article>
-                <h2>Mi amor de Wattpad</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                <img src="assets/img/libro2.png" alt="La habitación al fondo de la casa">
+                <div class="contenido__descripcion">
+                    <h2>Mi amor de wattpad</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel tortor ex. Pellentesque ultrices orci urna, quis commodo velit condimentum id. Mauris hendrerit nibh accumsan, commodo augue in, tincidunt lacus. Praesent et fringilla urna. Aliquam at pretium sapien. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras lobortis, elit ac convallis porttitor, metus ligula porta ex, vel imperdiet ante urna in sapien. Duis erat augue, suscipit quis nulla sed, auctor commodo massa. Duis auctor nisl mauris, sit amet laoreet eros ullamcorper et. Nam eleifend convallis mauris eu sodales. Pellentesque sagittis erat vel mauris vulputate, sed ultrices tellus pretium. Curabitur dictum elementum laoreet. Sed eget venenatis urna. Nullam lacinia fermentum lacinia. Etiam a posuere nunc, nec fermentum quam. Sed ultricies risus ut enim consequat tempor.</p>
+                </div>
             </article>
         </div>
         
         <aside class="sidebar">
-            <h3>Acerca de mi</h3>
-            <img src="assets/img/foto-perfil.jpg" alt="Foto de Natalia" class="foto-perfil">
-            <p>Natalia Güemez</p>
-            <p>Instagram principal 
-                <a href="https://www.instagram.com/nattpuffs/" target="_blank">@nattpuffs</a>
-            </p>
-
-            <h3>Linkedin</h3>
-            <div class="badge-base LI-profile-badge" data-locale="es_ES" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="natalia-güemez-51860228b" data-version="v1">
-                <a class="badge-base__link LI-simple-link" href="https://mx.linkedin.com/in/natalia-g%C3%BCemez-51860228b?trk=profile-badge"></a>
+            <div class="acerca">
+                <h3 class="acerca__titulo acerca__titulo--color" >Acerca de mi</h3>
+                <img src="assets/img/foto-perfil.jpg" alt="Foto de Natalia" class="foto-perfil">
+                <p class="acerca__nombre acerca__nombre--color"><strong>Natalia Güemez</strong></p>
+                <p>Instagram principal 
+                    <a href="https://www.instagram.com/nattpuffs/" target="_blank">@nattpuffs</a>
+                </p>
             </div>
 
-            <h3>Mi playlist favorita</h3>
-            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/64ArPiQXwY1qmATIvfVEud?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <div class="playlist-fav">
+                <h3 class="playlist-fav__titulo playlist-fav__titulo--color">Mi playlist favorita</h3>
+                <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/64ArPiQXwY1qmATIvfVEud?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            
+            </div>
             
         </aside>
     </main>

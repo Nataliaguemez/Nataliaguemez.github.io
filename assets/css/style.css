@@ -3,6 +3,7 @@
     --blanco: #ffffff;
     --rosaFuerte: #b60f2b;
     --textoAccesible: #5F5F5F;
+    --rosaClaro: #ffc7fc;
 }
 
 html { font-size: 62.5%; box-sizing: border-box; }
@@ -11,7 +12,6 @@ html { font-size: 62.5%; box-sizing: border-box; }
 
 html, body {
     overflow-x: hidden; /* evita scroll horizontal */
-    max-width: 100%;    /* asegura que nada se pase del ancho */
 }
 
 body {
@@ -33,8 +33,9 @@ p { font-size: 1.8rem; font-family: Arial, Helvetica, sans-serif; }
 a { color: #3498db; text-decoration: none; }
 
 h1 { font-size: 6.4rem; margin-bottom: 1rem; }
-h2 { font-size: 3.2rem; margin: 0; margin-bottom: 0;}
-h3 { font-size: 2.4rem; margin: 0; margin-bottom: 1rem;}
+h2, h3 { margin: 0 0 1rem 0; }
+h2 { font-size: 3.2rem; }
+h3 { font-size: 2.4rem; }
 
 img {
     max-width: 100%;
@@ -50,18 +51,18 @@ img {
 
     /* para tomar todo el ancho disponible */
     background-size: cover;
-    height: 40rem;
+    height: auto; /* deja crecer el header */
+    min-height: 40rem; /* altura mínima del header */
 
     /* el padre siempre debe tener posición relativa para que el hijo se pueda posicionar de forma absoluta */
     position: relative;
 }
 
-.contenido-header {
-    position: absolute;
+.contenido-header { 
+    position: relative;
     background-color: rgb(0 0 0 / 50%);
     width: 100%;
-    min-height: 100%;   /* se adapta al contenido */
-    height: auto; /* deja crecer el header */
+    min-height: 40rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -70,18 +71,19 @@ img {
 
 .nav-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: auto 1fr; /* logo a la izquierda, nav a la derecha */
+    align-items: center;
     padding: 2.5rem;
     width: 100%;
 }
 
 nav {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    text-align: center;
+    justify-content: flex-end; /* los enlaces a la derecha */
+    align-items: center; /* centra verticalmente */
+    text-align: center; /* centra el texto */
     gap: 6rem;   /* menos espacio entre enlaces */
-    white-space: nowrap; /* evita que los enlaces bajen de línea */
+    white-space: nowrap; /* evita que los enlaces se rompan en varias líneas */
 }
 
 nav a {
@@ -89,6 +91,11 @@ nav a {
     font-weight: bold;
     font-size: 1.8rem;
     text-transform: uppercase;
+}
+
+nav a:hover {
+    color: var(--rosaClaro);
+    text-decoration: none;
 }
 
 .contenido-header p { text-align: center; font-size: 3rem; margin: 0; color: var(--blanco); }
@@ -104,6 +111,11 @@ nav a {
     display: flex;
     justify-content: center;
     gap: 4rem;
+    transition: transform 10s ease;
+}
+
+.redes-sociales a:hover {
+    transform: scale(1.3);
 }
 
 /* Header: Redes sociales */
@@ -118,7 +130,6 @@ nav a {
     gap: 2rem; /* Espacio entre columnas */
     padding: 2rem;
     width: 100%;     /* ocupa todo el ancho disponible */
-    max-width: 100%; /* asegura que nunca se limite */
     margin: 0;
     align-items: start; /* Asegura que sidebar y contenido comiencen arriba */
     color: var(--textoAccesible);
@@ -138,7 +149,7 @@ nav a {
     /* ajustar texto */
     width: 100%;
     max-width: 100%;
-    word-break: break-word;      /* asegura que las palabras largas no desborden */
+    word-break: break-word; /* asegura que las palabras largas no desborden */
 }
 
 .contenido article {
@@ -188,68 +199,70 @@ nav a {
     transform: scale(1.05);
 }
 
-@media (max-width: 768px) {
-    .contenedor-principal {
-        grid-template-columns: 1fr; /* se apilan */
-    }
+.sidebar p {
+    margin: 0;
+}
 
-    nav {
-        gap: 6rem;
-        align-items: center;
-    }
-
-    .sidebar {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
-        padding: 5rem;
-        text-align: center;
-    }
-
+@media (max-width: 912px) {
     .contenido article {
         flex-direction: column-reverse;
         align-items: center;
+        text-align: center;
     }
     .contenido p {
+        font-size: 1.6rem; /* más compacto */
         margin-bottom: 0;
     }
+
     .contenido img {
-        min-width: 30%;
-        width: 30.8rem;
-        height: 40rem;
+        max-width: 25rem;
+        height: auto;
+        object-fit: cover;
+        border-radius: 3rem;
     }
 }
 
-@media (max-width: 480px) {
-    .header-bg {
-        height: 55rem;
+@media (max-width: 768px) {
+
+    body {
+        text-align: center;
     }
 
     .nav-grid {
         grid-template-columns: 1fr;
+        gap: 2rem;
         justify-items: center;
-        gap: 3rem;
-        padding-bottom: 0;
     }
 
     nav {
-        text-align: center;
+        gap: 3rem;
+        align-items: center;
+        justify-content: center;
+        white-space: normal;
     }
+
     nav a {
         font-size: 1.6rem;
     }
 
-    .descripcion-blog h1 {
-        font-size: 5.5rem;
-    }
-    .descripcion-blog p {
-        font-size: 3.5rem;
+    .contenido-header {
+        padding: 4rem;
     }
 
-    iframe {
-        max-width: 100%;
+    .contenedor-principal {
+        grid-template-columns: 1fr; /* se apilan */
+        text-align: center; 
+        justify-items: center;
+    }
+
+    .contenido, .sidebar {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .sidebar {
+        padding: 5rem;
+        text-align: center;
     }
 }
 
@@ -259,7 +272,7 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.9rem;
+    gap: 1rem;
 }
 
 footer p {

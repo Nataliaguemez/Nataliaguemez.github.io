@@ -223,9 +223,25 @@ nav a:hover {
 }
 
 @media (max-width: 768px) {
-
     body {
         text-align: center;
+    }
+
+    .header-bg {
+        min-height: 20rem; /* más pequeño en móvil */
+    }
+
+    .contenido-header {
+        min-height: 20rem;
+        padding: 2rem;
+    }
+
+    .contenido-header h1 {
+        font-size: 3rem; /* más pequeño que los 6.4rem */
+    }
+
+    .contenido-header p {
+        font-size: 1.6rem;
     }
 
     .nav-grid {
